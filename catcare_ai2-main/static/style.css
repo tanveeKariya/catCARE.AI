@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=Lexend:wght@100..900&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+}
+.back{
+    background-image: url('image.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    height: auto;
+}
+.logo{
+    float: left;
+    margin: 20px;
+}
+.logo img{
+    width: 180px;
+}
+form{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    gap: 60px;
+    margin-bottom: 30px;
+}
+.input-field{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    width: 650px;
+}
+.input-field p{
+font-family: 'League Gothic';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 48px;
+letter-spacing: 0.03em;
+margin: 0;
+
+color: #000000;
+
+
+}
+form h3{
+
+font-family: 'League Gothic';
+font-style: normal;
+font-weight: 400;
+font-size: 72px;
+line-height: 86px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.03em;
+
+color: #000000;
+margin: 0;
+
+
+}
+.input-field input{
+
+box-sizing: border-box;
+
+width: 400px;
+height: 50px;
+
+border: 2px solid #F4C211;
+border-radius: 20px;
+background: none;
+
+padding: 0px 20px;
+font-size: 25px;
+
+}
+
+form button{
+    /* Rectangle 16 */
+
+box-sizing: border-box;
+
+width: 173px;
+height: 50px;
+
+background: #F4C211;
+border: 2px solid #F4C211;
+border-radius: 20px;
+
+
+}
+.quess{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+}
+.ques{
+width: 198px;
+height: 36px;
+
+font-family: 'League Gothic';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+letter-spacing: 0.03em;
+
+color: #000000;
+margin: 0;
+
+
+}
+.ques-link{
+width: 147px;
+height: 30px;
+
+
+font-family: 'League Gothic';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 30px;
+letter-spacing: 0.03em;
+
+color: #21258A;
+margin: 0;
+
+}

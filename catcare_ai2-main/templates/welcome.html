@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../static/Polygon 1.png" type="image/x-icon">
+
+    <title>Welcome to CATCare</title>
+    <style>
+     body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-size: 5vw;
+  font-weight: bold;
+  color: #000000;
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.logo img {
+  width: 60vw;
+  height: auto;
+}
+
+.logo .triangle {
+  position: absolute;
+  left: 72px;
+  top: 8px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid #ffcc00;
+  z-index: -1;
+}
+
+.line {
+  width: 0;
+  height: 3px;
+  background-color: #ffcc00;
+  margin: 20px auto 0 auto;
+  animation: lineGrow 5s ease-in-out;
+}
+
+.button {
+  margin-top: 30px;
+  padding: 10px 20px;
+  border: 2px solid #ffcc00;
+  background-color: transparent;
+  color: #ffcc00;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  animation: fadeIn 5s ease-in-out;
+}
+
+.button:hover {
+  background-color: #ffcc00;
+  color: #ffffff;
+}
+
+.chatbot-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lineGrow {
+  0% {
+    width: 0%;
+  }
+  99% {
+    width: 50%;
+  }
+  100% {
+    width: 0%;
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo {
+    font-size: 8vw;
+  }
+
+  .line {
+    width: 0;
+  }
+
+  .button {
+    padding: 8px 16px;
+  }
+
+  .chatbot-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div
+        style="
+          font-family: lexend Arial, Helvetica, sans-serif;
+          font-weight: bolder;
+          font-size: 30px;
+        "
+      >
+      <div class="chatbot-icon">
+        <a href="/chat/"><img src="../static/Group 5.png"></a>
+    </div>
+    
+        Welcome to
+      </div>
+      <div class="logo">
+        <img src="../static/logo.png" />
+      </div>
+      <div class="line"></div>
+      <a href="/success/"><button class="button">START</button></a>
+    </div>
+  </body>
+</html>

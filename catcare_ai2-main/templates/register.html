@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/Polygon 1.png" type="image/x-icon">
+
+    <title>CATCare | Register</title>
+    <style>
+         body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('../static/background_img.png') no-repeat center center/cover;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.login-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group {
+    margin: 15px 35px 15px 0;
+    text-align: left;
+    align-items: center;
+}
+
+.input-group label {
+    font-weight: bold;
+    display: block;
+    color: #333;
+}
+
+.input-group input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #ffcc00;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.input-group input:focus {
+    box-shadow: 0px 0px 5px #ffcc00;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.login-button {
+    margin-top: 20px;
+    padding: 10px;
+    width: 50%;
+    border: none;
+    background-color: #ffcc00;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 9%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.login-button:hover {
+    background-color: #e6b800;
+}
+
+.chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+@media (max-width: 600px) {
+    .login-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .login-title {
+        font-size: 20px;
+    }
+
+    .input-group input {
+        font-size: 14px;
+    }
+
+    .login-button {
+        font-size: 14px;
+    }
+
+    .logo img {
+        width: 70px;
+    }
+
+    .chatbot-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="chatbot-icon">
+        <a href="/chat/"><img src="../static/Group 5.png"></a>
+    </div>
+    <div class="logo">
+        <img src="../static/logo.png" alt="Caterpillar Logo"/>
+    </div>
+    <form method="post" class="login-container">
+        {% csrf_token %}
+        <div class="login-title">Register</div>
+        <div class="input-group">
+            <label for="name">First Name:</label>
+            {{form.first_name}}
+            {% if form.first_name.errors %}
+            <div class="error">
+                {% for error in form.first_name.errors %}
+                    <p>{{error}}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        <div class="input-group">
+            <label for="email">Last Name:</label>
+            {{form.last_name}}
+            {% if form.last_name.errors %}
+            <div class="error">
+                {% for error in form.last_name.errors %}
+                    <p>{{error}}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        <div class="input-group">
+            <label for="password">Email:</label>
+            {{form.email}}
+            {% if form.email.errors %}
+            <div class="error">
+                {% for error in form.email.errors %}
+                    <p>{{error}}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        <div class="input-group">
+            <label for="password">Username:</label>
+            {{form.username}}
+            {% if form.username.errors %}
+            <div class="error">
+                {% for error in form.username.errors %}
+                    <p>{{error}}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        <div class="input-group">
+            <label for="password">Password:</label>
+            {{form.password1}}
+            {% if form.password1.errors %}
+            <div class="error">
+                {% for error in form.password1.errors %}
+                    <p>{{error}}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        <div class="input-group">
+            <label for="password">Confirm Password:</label>
+            {{form.password2}}
+            {% if form.password2.errors %}
+            <div class="error">
+                {% for error in form.password2.errors %}
+                    <p>{{error}}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        <button class="login-button" type="submit">Register</button>
+    </form>
+</body>
+</html>

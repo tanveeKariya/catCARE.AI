@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/Polygon 1.png" type="image/x-icon">
+
+    <title>CATCare | Home</title>
+    <style>
+    body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    color: #333;
+}
+
+.navbar {
+    background-color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap;
+}
+
+.navbar img {
+    height: 40px;
+    margin-right: 20px;
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navbar-menu a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-menu a:hover {
+    color: #ffcc00;
+}
+
+.tagline {
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    padding: 10px;
+    font-weight: bolder;
+    background-color: #f9f9f9;
+}
+
+.hero-section {
+    background: url('../static/background_img.png') no-repeat center;
+    height: 80vh;
+    position: relative;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    margin: 0;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-section p {
+    font-size: 18px;
+    margin: 20px 0;
+    max-width: 600px;
+    color: black;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons .btn {
+    background-color: rgba(255, 204, 0, 0.9);
+    border: none;
+    padding: 12px 30px;
+    color: black;
+    font-size: 16px;
+    margin: 0 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.buttons .btn:hover {
+    background-color: #e6b800;
+    transform: translateY(-2px);
+}
+
+.features-section {
+    background-color: #f7f7f7;
+    padding: 50px 20px;
+    text-align: center;
+    background-image: url('../static/background_img.png');
+}
+
+.features-section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #333;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.feature {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature img {
+    width: 223px;
+    height: 277px;
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ffcc00;
+}
+
+.feature p {
+    font-size: 14px;
+    color: #555;
+}
+
+.products-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.products-section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #333;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.product {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product img {
+    width: 230px;
+    height: 225px;
+    margin-bottom: 15px;
+}
+
+.product h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product p {
+    font-size: 14px;
+    color: #555;
+}
+
+.testimonials-section {
+    background-color: #f7f7f7;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #333;
+}
+
+.testimonials {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.testimonial {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial img {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.testimonial h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.testimonial p {
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer a {
+    color: #ffcc00;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .navbar-menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-menu a {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .hero-section h1 {
+        font-size: 36px;
+    }
+
+    .hero-section p {
+        font-size: 16px;
+    }
+
+    .buttons .btn {
+        padding: 10px 25px;
+        font-size: 14px;
+        margin: 5px;
+    }
+
+    .features, .products, .testimonials {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature, .product, .testimonial {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 28px;
+    }
+
+    .hero-section p {
+        font-size: 14px;
+    }
+
+    .buttons .btn {
+        padding: 8px 20px;
+        font-size: 12px;
+        margin: 5px;
+    }
+
+    .navbar-menu a {
+        font-size: 14px;
+    }
+}
+
+       
+
+    </style>
+</head>
+<body>
+    <div class="chatbot-icon">
+        <a href="/chat/"><img src="../static/Group 5.png"></a>
+    </div>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <img src="../static/logo.png" alt="Caterpillar Logo">
+        <div class="navbar-menu">
+            <a href="/about/">About Us</a>
+            <a href="/product/">Our Products</a>
+            <a href="/contact">Contact Us</a>
+            <a href="/history">History</a>
+            <a href="/logout/">Logout</a>
+        </div>
+    </div>
+
+    <!-- Tagline -->
+    <div class="tagline">Powering Your Success, Every Step of the Way</div>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <img src="../static/Frame.png" alt="logo">
+        <p>Powering Your CatCare Fleet with Intelligent Support, 24/7 Precision, and AI-Driven Solutions</p>
+        <div class="buttons">
+            <button class="btn" onclick="location.href='/product/'">Check Your Product</button>
+            <button class="btn" onclick="location.href='/contact'">Contact Us</button>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features-section" >
+        <h2>Our Key Features</h2>
+        <div class="features">
+            <div class="feature">
+                <img src="../static/feature1.png" alt="Feature 1">
+                <h3>Real-Time Monitoring</h3>
+                <p>Keep track of your fleet with live data and insights.</p>
+            </div>
+            <div class="feature">
+                <img src="../static/feature2.png" alt="Feature 2">
+                <h3>AI-Driven Analytics</h3>
+                <p>Leverage AI to optimize performance and efficiency.</p>
+            </div>
+            <div class="feature">
+                <img src="../static/feature3.png" alt="Feature 3">
+                <h3>24/7 Support</h3>
+                <p>Our team is here to help you, anytime, anywhere.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <div class="products-section">
+        <h2>Our Products</h2>
+        <div class="products">
+            <div class="product">
+                <img src="../static/Asphalt_Paver_1.jpg" alt="Product 1">
+                <h3>Asphalt_Paver_1</h3>
+                <p>High-performance machinery for all your needs.</p>
+            </div>
+            <div class="product">
+                <img src="../static/articulated_truck.png" alt="Product 2">
+                <h3>Articulated_truck</h3>
+                <p>Advanced tools to enhance your productivity.</p>
+            </div>
+            <div class="product">
+                <img src="../static/dozer.png" alt="Product 3">
+                <h3>Dozer</h3>
+                <p>State-of-the-art technology for the modern industry.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="testimonials-section">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <img src="../static/client1.jpg" alt="Client 1">
+                <h3>Emily Brooks</h3>
+                <p>"Caterpillar AI has revolutionized our operations. Their support is unparalleled."</p>
+            </div>
+            <div class="testimonial">
+                <img src="../static/client2.jpg" alt="Client 2">
+                <h3>Sophia Collins</h3>
+                <p>"The AI-driven solutions have made a significant impact on our productivity."</p>
+            </div>
+            <div class="testimonial">
+                <img src="../static/client3.jpg" alt="Client 3">
+                <h3>John Mitchell</h3>
+                <p>"We couldn't be happier with the results we've seen using Caterpillar AI."</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 CatCare AI. All Rights Reserved.</p>
+    </div>
+
+    <script>
+        // Additional JavaScript (if needed)
+    </script>
+</body>
+</html>

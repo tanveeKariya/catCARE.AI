@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/Polygon 1.png" type="image/x-icon">
+    <title>CATCare | About Us</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            background-color: #f4f4f4;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .navbar img {
+            height: 40px;
+        }
+
+        .navbar-menu {
+            display: flex;
+            margin-left : 40px;
+            margin-right : 40px;
+            
+        }
+
+        .navbar-menu a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .navbar-menu a:hover {
+            color: #ffcc00;
+        }
+
+        /* About Section */
+        .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 88vh;
+            height: auto;
+            background: linear-gradient(120deg, #ffcc00 50%, #f4f4f4 50%);
+            padding-top: 80px;
+            overflow: hidden;
+            position: relative;
+            flex-direction: column;
+        }
+
+        .about-section h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: fadeInDown 1.2s ease-in-out;
+        }
+
+        .about-content {
+            max-width: 800px;
+            text-align: left;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            animation: fadeInUp 1.2s ease-in-out;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .about-content p.highlight {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        .learn-more-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: transparent;
+            border: 2px solid #ffcc00;
+            border-radius: 25px;
+            color: #ffcc00;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .learn-more-btn:hover {
+            background-color: #ffcc00;
+            color: white;
+        }
+
+        .chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+        /* Keyframes for animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar-menu a {
+                font-size: 14px;
+                margin-left: 15px;
+            }
+
+            .about-section h1 {
+                font-size: 36px;
+                text-align: center;
+            }
+
+            .about-content {
+                padding: 20px;
+                margin-top: 20px;
+            }
+
+            .about-content p {
+                font-size: 16px;
+            }
+
+            .learn-more-btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar img {
+                height: 30px;
+            }
+
+            .navbar-menu a {
+                font-size: 12px;
+                margin-left: 10px;
+            }
+
+            .about-section {
+                padding-top: 60px;
+            }
+
+            .about-section h1 {
+                font-size: 28px;
+            }
+
+            .about-content {
+                padding: 15px;
+                margin-top: 10px;
+            }
+
+            .about-content p {
+                font-size: 14px;
+            }
+
+            .learn-more-btn {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chatbot-icon">
+        <a href="/chat/"><img src="../static/Group 5.png"></a>
+    </div>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <img src="../static/logo.png" alt="Caterpillar Logo">
+        <div class="navbar-menu">
+            <a href="/success/">Home</a>
+            <a href="/contact">Contact Us</a>
+            <a href="/product/">Our Products</a>
+            <a href="/history">History</a>
+            <a href="/logout/">Logout</a>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="about-section">
+        <h1>ABOUT</h1>
+        <div class="about-content">
+            <p>With 2023 sales and revenues of <span class="highlight">$67.1 billion</span>, Caterpillar Inc. is the world's leading manufacturer of construction and mining equipment, off-highway diesel and natural gas engines, industrial gas turbines, and diesel-electric locomotives.</p>
+            <p>For nearly 100 years, we've been helping customers build a better, more sustainable world and are committed to contributing to a reduced-carbon future. Our innovative products and services, backed by our global dealer network, provide exceptional value that helps customers succeed.</p>
+            <a href="https://www.caterpillar.com/" class="learn-more-btn">Learn More</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/Polygon 1.png" type="image/x-icon">
+
+    <title>CATCare | History</title>
+    <style>
+        /* Basic reset */
+        body, h1, h2, h3, p, ul, li, table, th, td {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: url('../static/background_img.png') no-repeat center center/cover;
+            color: #333;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            width: 98%;
+            padding: 10px 20px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+        }
+
+        .navbar .logo img {
+            width: 150px;
+        }
+
+        .navbar ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar ul li {
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .navbar ul li a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .navbar ul li a:hover {
+            color: #e6b800;
+        }
+
+        /* Profile section styling */
+        .profile-section {
+            margin: 100px 20px 20px;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            flex-wrap: wrap;
+        }
+
+        .profile-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            flex-grow: 1;
+        }
+
+        .profile-info h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .profile-info p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Table styling */
+        .history-table {
+            width: calc(100% - 40px);
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ffcc00;
+            color: #333;
+        }
+
+        td {
+            background-color: #fff;
+        }
+        .chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+        @media (max-width: 900px) {
+            .navbar ul {
+                gap: 10px;
+            }
+
+            .profile-section {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px;
+            }
+
+            .profile-photo {
+                width: 80px;
+                height: 80px;
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+            .profile-info h1 {
+                font-size: 20px;
+            }
+
+            .profile-info p {
+                font-size: 14px;
+            }
+
+            .history-table {
+                padding: 15px;
+                width: calc(100% - 30px);
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .navbar ul {
+                flex-direction: column;
+                align-items: flex-end;
+            }
+
+            .navbar ul li {
+                font-size: 14px;
+            }
+
+            .profile-section {
+                margin-top: 80px;
+                padding: 10px;
+            }
+
+            .profile-photo {
+                width: 60px;
+                height: 60px;
+            }
+
+            .profile-info h1 {
+                font-size: 18px;
+            }
+
+            .profile-info p {
+                font-size: 12px;
+            }
+
+            .history-table {
+                padding: 10px;
+                width: calc(100% - 20px);
+            }
+
+            th, td {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            table {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chatbot-icon">
+        <a href="/chat/"><img src="../static/Group 5.png"></a>
+    </div>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="../static/logo.png" alt="Caterpillar Logo"/>
+        </div>
+        <ul>
+            <li><a href="/success/">Home</a></li>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/product/">Our Products</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/logout/">Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Profile Section -->
+    <div class="profile-section">
+        <div class="profile-photo">
+           <img src="../static/user.png" alt="Profile Photo">
+        </div>
+        <div class="profile-info">
+            <h1>{{ request.user.username }}</h1>
+            <p>{{ request.user.email }}</p>
+        </div>
+    </div>
+
+    <!-- History Table -->
+    <div class="history-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Machine</th>
+                    <th>Component</th>
+                    <th>Parameter</th>
+                    <th>Value</th>
+                    <th>Chance of Failure</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for history in historys %}
+                <tr>
+                    <td>{{ history.date }}</td>
+                    <td>{{ history.machine }}</td>
+                    <td>{{ history.component }}</td>
+                    <td>{{ history.parameter }}</td>
+                    <td>{{ history.value }}</td>
+                    <td>{{ history.failure }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

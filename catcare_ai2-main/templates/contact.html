@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/Polygon 1.png" type="image/x-icon">
+
+    <title>CATCare | Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: #f4f4f4;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.navbar img {
+    height: 40px;
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navbar-menu a {
+    margin-left: 20px;
+    margin-right : 30px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-menu a:hover {
+    color: #ffcc00;
+}
+
+/* Contact Section */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px 0px;
+    background-color: #f4f4f4;
+    overflow: hidden;
+    width: 100%;
+}
+
+.contact-section h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    animation: fadeInDown 1.2s ease-in-out;
+}
+
+.contact-details, .contact-form, .faq-section {
+    width: 100%;
+    max-width: 1200px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1.2s ease-in-out;
+    margin-bottom: 40px;
+}
+
+.contact-details h2, .contact-form h2, .faq-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffcc00;
+}
+
+.contact-details p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-details p strong {
+    color: #333;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+}
+
+.contact-form button {
+    padding: 15px;
+    background-color: #ffcc00;
+    border: none;
+    color: black;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.contact-form button:hover {
+    background-color: #e6b800;
+}
+
+.faq-section .faq {
+    margin-bottom: 20px;
+}
+
+.faq-section .faq-question {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.faq-section .faq-answer {
+    font-size: 16px;
+    line-height: 1.6;
+    display: none;
+    color: #555;
+}
+
+.faq-section .faq-question i {
+    margin-right: 10px;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.footer p i {
+    margin-right: 10px;
+}
+
+.chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar-menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-menu a {
+        margin-left: 0;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 20px 0px; /* Increased padding to account for the fixed navbar */
+    background-color: #f4f4f4;
+    overflow: hidden;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 80px 20px 0px; /* Reduce padding on smaller screens */
+    }
+}
+
+    .contact-details, .contact-form, .faq-section {
+        padding: 20px;
+    }
+
+    .footer p {
+        font-size: 14px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="chatbot-icon">
+        <a href="/chat/"><img src="../static/Group 5.png"></a>
+    </div>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <img src="../static/logo.png" alt="Caterpillar Logo">
+        <div class="navbar-menu">
+            <a href="/success/">Home</a>
+            <a href="/about/">About Us</a>
+            <a href="/product/">Our Products</a>
+            <a href="/history">History</a>
+            <a href="/logout/">Logout</a>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <h1>Contact Us</h1>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h2>Get in Touch</h2>
+            <form action="sendmail" method="post">
+                {% csrf_token %}
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            {% if messages %}
+                      <ul class="messages">
+                        {% for message in messages %}
+                         <center><li{% if message.tags %} class="{{ message.tags }}"{% endif %} id="msg">{{ message }}</li></center>
+                       {% endfor %}
+                     </ul>
+                    
+                     <script>
+                       setTimeout(function() {
+                         var messages = document.querySelector('.messages');
+                         if (messages) {
+                           messages.style.display = 'none';
+                         }
+                       }, 2000);
+                     </script>
+                    {% endif %}
+        </div>
+
+        <!-- FAQ Section -->
+        
+
+    <!-- Footer -->
+    <div class="footer">
+        <p><i class="fas fa-map-marker-alt"></i> 100 N.E. Adams Street, Peoria, IL 61629, USA</p>
+        <p><i class="fas fa-phone-alt"></i> +1 (309) 675-1000</p>
+        <p><i class="fas fa-envelope"></i> contact@caterpillar.com</p>
+    </div>
+
+    <script>
+        // FAQ Toggle Script
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const answer = item.nextElementSibling;
+                const icon = item.querySelector('i');
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+    </script>
+</body>
+</html>

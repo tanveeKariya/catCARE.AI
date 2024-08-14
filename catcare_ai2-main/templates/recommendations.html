@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/Polygon 1.png" type="image/x-icon">
+
+    <title>CATCare | Result</title>
+    <style>
+       /* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1200px; /* Added max-width for better large screen handling */
+    height: 100%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-sizing: border-box; /* Ensure padding does not affect total width/height */
+}
+
+/* Header */
+.header {
+    padding: 10px 20px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    border-radius: 8px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar img {
+    height: 40px;
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-menu a:hover {
+    color: #ffcc00;
+}
+
+/* Responsive Navbar */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+}
+
+.navbar-menu.active {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-menu a {
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Content */
+.content {
+    margin-top: 20px;
+}
+
+.content h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.step {
+    background-color: #ffffff;
+    border: 2px solid #f3c201;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.step:hover {
+    background-color: #f3c201;
+    transform: scale(1.02);
+}
+
+.step img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    transition: transform 0.3s;
+}
+
+.step img.active {
+    transform: rotate(90deg);
+}
+
+.description {
+    display: none;
+    margin-left: 34px;
+    color: #555;
+}
+
+.button {
+    background-color: #f3c201;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* Chatbot Icon */
+.chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none; /* Hide the menu by default */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger menu */
+    }
+
+    .navbar-menu.active {
+        display: flex; /* Show menu when active */
+    }
+}
+
+@media (max-width: 600px) {
+    .step {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .description {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .content h1 {
+        font-size: 20px;
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="chatbot-icon">
+        <a href="/chat/"><img src="../static/Group 5.png"></a>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="navbar">
+                <img src="../static/logo.png" alt="Caterpillar Logo">
+                <div class="navbar-menu">
+                    <a href="/about/">About Us</a>
+                    <a href="/product/">Our Products</a>
+                    <a href="/contact">Contact Us</a>
+                    <a href="/history">History</a>
+                    <a href="/logout/">Logout</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            {% if prediction == 'High' %}
+            <p>According to the data provided, there are <strong>much higher</strong> chances for machine failure. See the recommendations for further assistance</p>
+            {% endif %}
+            {% if prediction == 'Medium' %}
+            <p>According to the data provided, there are <strong>50 percent</strong> chances for machine failure. See the recommendations for further assistance</p>
+            {% endif %}
+            {% if prediction == 'Low' %}
+            <p>According to the data provided, there are <strong>lower</strong> chances for machine failure. See the recommendations for further assistance</p>
+            {% endif %}
+        </div>
+        <hr style="width: 80%; align-self: center;">
+        <div class="content">
+            <h1>Recommended Steps</h1>
+            {% for recommendation in recommendations %}
+            {% if recommendation.heading1 is not None %}
+            <div class="step">
+                <img src="https://img.icons8.com/ios-filled/50/000000/settings.png" alt="Settings Icon"/>
+                    {{recommendation.heading1}}
+                <div class="description">
+                    {{ recommendation.Recommendations1 }}
+                </div>
+            </div>
+            {% endif %}
+            {% if recommendation.heading2 is not None %}
+            <div class="step">
+                <img src="https://img.icons8.com/ios-filled/50/000000/settings.png" alt="Settings Icon"/>
+                    {{recommendation.heading2}}
+                <div class="description">
+                    {{recommendation.Recommendations2}}
+                </div>
+            </div>
+            {% endif %}
+            {% if recommendation.heading3 is not None %}
+            <div class="step">
+                <img src="https://img.icons8.com/ios-filled/50/000000/settings.png" alt="Settings Icon"/>
+                    {{recommendation.heading3}}
+                <div class="description">
+                    {{recommendation.Recommendations3}}
+                </div>
+            </div>
+            {% endif %}
+            {% if recommendation.heading4 is not None %}
+            <div class="step">
+                <img src="https://img.icons8.com/ios-filled/50/000000/settings.png" alt="Settings Icon"/>
+                    {{recommendation.heading4}}
+                <div class="description">
+                    {{recommendation.Recommendations4}}
+                </div>
+            </div>
+            {% endif %}
+            {% if recommendation.heading5 is not None %}
+            <div class="step">
+                <img src="https://img.icons8.com/ios-filled/50/000000/settings.png" alt="Settings Icon"/>
+                    {{recommendation.heading5}}
+                <div class="description">
+                    {{recommendation.Recommendations5}}
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            <a href="/success/" class="button">Back to home</a>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle click events on the steps
+        document.querySelectorAll('.step').forEach(step => {
+            step.addEventListener('click', function() {
+                const description = this.querySelector('.description');
+                const icon = this.querySelector('img');
+                description.style.display = description.style.display === 'block' ? 'none' : 'block';
+                icon.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
